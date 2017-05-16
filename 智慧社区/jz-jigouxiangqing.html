@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/ss1.css" />
+	<link rel="stylesheet" type="text/css" href="css/xiaoxi.css" />
+	<link rel="stylesheet" type="text/css" href="css/zhuanjialist.css" />
+	<link rel="stylesheet" type="text/css" href="css/wenda.css" />
+	<link rel="stylesheet" type="text/css" href="css/gongyou.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="js/zoom.js" type="text/javascript" charset="utf-8"></script>-->
+	<style>
+		html,body{width: 100%;height: 100%;position: relative;}
+		html{font-size: 100px;}
+		#news_fir_xz{width: 100%;overflow: hidden;}
+		#news_fir_xz li{width: 25%;font-size: 0.24rem;color: #727272;text-align: center;padding:0.15rem 0;float: left;list-style: none;border-bottom: 0.05rem solid white;}
+		#news_fir_xz .news_fir_xzC{border-bottom: 0.05rem solid #4c93eb;}
+		#news_fir_xs section{display: none;width: 6.4rem;height: 3.32rem;position: relative;}
+		#news_fir_xs .news_fir_xsC{display: block;}
+		.sname,
+			.szhiwu {
+				width: 3.36rem;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.swiper-container {
+		        width: 100%;
+		        
+		    }
+		    .swiper-wrapper{
+		    	height: auto;
+		    }
+		    .swiper-slide {
+		       /* text-align: center;*/
+		        font-size: 18px;
+		        background: #fff;
+		        height: auto;
+		
+		    }
+  
+			.dotai_1 {
+				width: 100%;
+				height: 2rem;
+				float: left;
+			}
+			
+			.dotai_2 {
+				width: 48%;
+				height: 2rem;
+				margin-left: 0.08rem;
+				float: left;
+			}
+			
+		.dotai_3,.dotai_4,.dotai_5,.dotai_6{
+				width: 32%;
+				height: 2rem;
+				float: left;
+				margin-left: 0.07rem;
+				margin-top: 0.05rem;
+			}
+			
+			
+			.linps1,.linps2,.linps3,.linps4{
+				text-align: center;
+				padding: 0.2rem 0;
+				font-size: 0.28rem;
+			}
+			.hide1,.hide2,.hide3,.hide4{
+				font-size: 0.28rem;
+				text-align: center; padding: 0.2rem; color: #ccc;
+			}
+			.xxxt time{
+				font-size: 0.28rem;
+			}
+			.xx02 div{
+				background-repeat:no-repeat;
+				background-size: cover;
+			}
+			.tabs a {
+			    display: block;
+			    float: left;
+			    width: 50%;
+			    color: #333;
+			    text-align: center;
+			    line-height: 0.88rem;
+			    font-size: 0.28rem;
+			    text-decoration: none;
+			  
+			}
+			.mbsp{
+				color: #999999;
+			}
+			.answer .title {
+    		font-size: 0.26rem}
+    		.linps {
+			    text-align: center;
+			    padding: 0.2rem 0;
+			    font-size: 0.28rem;
+			}
+			.zntban{
+				width: 100%;
+				height: 3.2rem;
+				background: url(img/ban-a1.png) center no-repeat;
+				background-size: 100% 100%;
+				overflow: hidden;
+			}
+			.psp{
+				width: 1.2rem;
+				height: 1.2rem;
+				border-radius: 50%;
+				border: 2px solid #fff;
+				margin: 0.7rem auto 0.2rem;
+				background: url(img/toux.png) center no-repeat;
+				background-size: 100% 100%;
+			}
+			.psp1{
+				text-align: center;
+				font-size: 0.28rem;
+				color: #fff;
+			}
+			.answer {
+			    border-top: 0rem solid #f0f0f0;
+			    padding-top: 0;
+			}
+			#news_fir_xs{
+				 border-top: 0.1rem solid #f0f0f0;
+			}
+			.zhiwu, .shangchang {
+			white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+			}
+			.question_list .detail {
+			  white-space: normal; 
+			}	
+			.lypss{
+				overflow: hidden;
+			    text-overflow: ellipsis;
+			    display: -webkit-box;
+			    -webkit-box-orient: vertical;
+			    -webkit-line-clamp: 2;
+			}
+			.l-y div {
+			    background-repeat: no-repeat;
+			    background-size: cover;
+			}
+			.dl p{
+				font-size: .3rem;
+			    width: 4.2rem;
+			    white-space: nowrap;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			}
+			.dl .time{
+				font-size: .27rem;
+			}
+			.question_list .title {
+			    font-size:.32rem;
+			    color: #999999;
+			}
+			/*头部CSS*/
+			
+			.education_fir {
+				background: #007cf0;
+				font-size: 0.32rem;
+				text-align: center;
+				position: relative;
+				color: #FFFFFF;
+				line-height: 0.568rem;
+				border-bottom: 0.01rem solid #f0f0f0;
+				overflow: hidden;
+				padding: 0.156rem 0;
+				width: 100%;
+			}
+			
+			.fan {
+				width: 0.2rem;
+				position: absolute;
+				top: 0.25rem;
+				left: 0.2rem;
+				margin: 0;
+			}
+			
+			.lms {
+				display: block;
+				width: 0.2rem;
+				height: 0.38rem;
+			}
+			.tabs .active {
+			    border-bottom: 0.02rem solid #007cf0;
+			    color: #007cf0;
+			}
+			@font-face {
+				font-family: 'iconfont';
+				src: url('fonts/iconfont.eot');
+				src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'), url('fonts/iconfont.woff') format('woff'), url('fonts/iconfont.ttf') format('truetype'), url('fonts/iconfont.svg#iconfont') format('svg');
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: .35rem;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-webkit-text-stroke-width: 0.2px;
+				-moz-osx-font-smoothing: grayscale;
+				position: absolute;
+				right: .2rem;
+			}
+	</style>
+</head>
+<body style="display: none;">
+		<!--头部搜索栏-->
+		<!--头部搜索栏-->
+		<div class="education_fir">
+			<a href="javascript:window.history.go(-1)" class="fan"><img class="lms" src="img/datou.png" /></a>
+			专家详情
+			<i class="iconfont">&#xe735;</i>
+		</div>
+		<div class="zntban">
+			
+			<p class="psp"></p>
+			<p class="psp1">翰林高考培训</p>
+		</div>
+		<!--tab切-->
+		<div class="tabs">
+				<a href="#" hidefocus="true" class="active">主页</a>
+				<a href="#" hidefocus="true">专家</a>
+			</div>
+		<div id="news_fir_xs">
+			<section class="news_fir_xsC">
+				<div id="vio" class="zhuanjia">
+					<a  class="ly-as"><img src="img/yuyin_02.png" style="width: 100%;"/></a>
+					<div class="answer">
+						<div class="title mb10"><span class="mbsp">主办单位: </span><span>沂水县农业局、沂水县科技局</span></div>
+						<div class="detail hegs"><span class="mbsp">服务内容: </span><span>看图是应该是使用话费增多，农家肥使用较少，造成的土壤板结，却苏症状验证，如缺铁、钾、钙等。</span></div>
+						
+					</div>
+					<div class="question_list">
+						<div class="title">专家答疑</div>
+						<ul class="zjtj">
+							<li>
+								<a href="weihuifu.html">
+									<div class="expert mb10">
+										<div class="ing fl">
+											<img src="img/user.png">
+										</div>
+										<div class="fl dl">
+											<p>周晓波  <span>专家</span></p>
+											<div class="time">2016/12/12 10:00:00</div>
+										</div>
+										<img class="ism fr" src="img/q0.png" />
+									</div>
+									<div class="detail mb10">看图是应该是使用话费增多，农家肥使用较少，造成的土壤板结，却苏症状验证，如缺铁、钾、钙等。</div>
+								</a>
+							</li>
+						</ul>
+						<p class="linps">点击加载更多</p>
+					</div>
+				</div>
+			</section>
+			
+			<section>
+					<div class="zhuanjialist">
+								<ul class="zjlst">
+									<li class="lis">
+										<a href="zhuanjiageren.html">
+											<!-- 跳转专家详情-->
+											<div class="touxia">
+												<img src="img/toux.png" />
+											</div>
+											<div class="jianjie">
+												<h1 class="name">周晓波</h1>
+												<p class="zhiwu">省种子管理总站副站长农科院长、山东农业专家</p>
+												<p class="shangchang">擅长水稻种植与防范</p>
+											</div>
+										</a>
+									</li>
+									<li class="lis">
+										<a href="zhuanjiageren.html">
+											<!-- 跳转专家详情-->
+											<div class="touxia">
+												<img src="img/toux.png" />
+											</div>
+											<div class="jianjie">
+												<h1 class="name">周晓波 </h1>
+												<p class="zhiwu">省种子管理总站副站长农科院长、山东农业专家</p>
+												<p class="shangchang">擅长水稻种植与防范</p>
+											</div>
+										</a>
+									</li>
+									<li class="lis">
+										<a href="zhuanjiageren.html">
+											<!-- 跳转专家详情-->
+											<div class="touxia">
+												<img src="img/toux.png" />
+											</div>
+											<div class="jianjie">
+												<h1 class="name">周晓波</h1>
+												<p class="zhiwu">省种子管理总站副站长农科院长、山东农业专家</p>
+												<p class="shangchang">擅长水稻种植与防范</p>
+											</div>
+										</a>
+									</li>
+									<li class="lis">
+										<a href="zhuanjiageren.html">
+											<!-- 跳转专家详情-->
+											<div class="touxia">
+												<img src="img/toux.png" />
+											</div>
+											<div class="jianjie">
+												<h1 class="name">周晓波</h1>
+												<p class="zhiwu">省种子管理总站副站长农科院长、山东农业专家</p>
+												<p class="shangchang">擅长水稻种植与防范</p>
+											</div>
+										</a>
+									</li>
+									<li class="lis">
+										<a href="zhuanjiageren.html">
+											<!-- 跳转专家详情-->
+											<div class="touxia">
+												<img src="img/toux.png" />
+											</div>
+											<div class="jianjie">
+												<h1 class="name">周晓波</h1>
+												<p class="zhiwu">省种子管理总站副站长农科院长、山东农业专家</p>
+												<p class="shangchang">擅长水稻种植与防范</p>
+											</div>
+										</a>
+									</li>
+									<li class="lis">
+										<a href="zhuanjiageren.html">
+											<!-- 跳转专家详情-->
+											<div class="touxia">
+												<img src="img/toux.png" />
+											</div>
+											<div class="jianjie">
+												<h1 class="name">周晓波</h1>
+												<p class="zhiwu">省种子管理总站副站长农科院长、山东农业专家</p>
+												<p class="shangchang">擅长水稻种植与防范</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<p class="hide3"></p>
+								<p class="linps3">点击加载更多</p>
+							</div>
+			</section>
+		</div>
+
+</body>
+</html>
+	<script type="text/javascript">
+			var html = document.getElementsByTagName("html")[0];
+
+    var width = document.documentElement.clientWidth || document.body.clientWidth;
+    var f = (100/640) * width; //先有个比例这里用的20/520，的比例
+    html.style.fontSize = f + 'px';
+    document.body.style.display='block';
+	</script>
+	<script>
+//		function GetRequest() {
+//				   var url = location.search; //获取url中"?"符后的字串
+//				   if (url.indexOf("?") != -1) {    //判断是否有参数
+//				      var str = url.substr(1); //从第一个字符开始 因为第0个是?号 获取所有除问号的所有符串
+//				      strs = str.split("=");   //用等号进行分隔 （因为知道只有一个参数 所以直接用等号进分隔 如果有多个参数 要用&号分隔 再用等号进行分隔）
+//				   	  return strs[1]         //直接弹出第一个参数 （如果有多个参数 还要进行循环的）
+//				   }
+//				}
+//				var sds=null;
+//				var tr=true;
+//				var vasl
+//				var sjs=1;
+//				var sj=1;
+//				var sj1=1;
+//				var sj2=1;
+//				var sj3=1;
+//				var sid=GetRequest();
+//				var hm='';
+//				var hm1='';
+//				var hm2='';
+//				var hm3='';
+//				var htms1='<li style="text-align: center; padding: 0.2rem; font-size: 0.28rem; color: #ccc;">暂无数据</li>';
+//				var htms2='数据已全部加载完毕';
+//				var vals=$('.ins').eq(0).val();
+//				$.ajaxSetup({ 
+//				    async : false 
+//				});
+//				function ax1(urls,obj){
+//					$.post(urls,obj,function(data) {
+//					sds=data;
+//					}, "json");
+//				}
+//				ax1("http://jiayuan.meihaojy.com/rest.php?s=web/index",{'method':'fosung.app.v2.specialist.detail','specialist_id':sid,'page':sj});
+//				console.log(sds);
+//				if(sds.data.specialist.specialist_head_icon==''||sds.data.specialist.specialist_head_icon==null){
+//					$('.psp').eq(0).css({'background':'url(files/usermor.png) center no-repeat','background-size':'cover'});
+//				}else{
+//					$('.psp').eq(0).css({'background':'url('+sds.data.specialist.specialist_head_icon+') center no-repeat','background-size':'cover'});
+//				}
+//				
+//				$('.psp1').eq(0).html(sds.data.specialist.specialist_name);
+//				$('.answer div').eq(0).html(sds.data.specialist.specialist_job_title);
+//				$('.answer div').eq(1).html(sds.data.specialist.specialist_skill_area);
+//				$.each(sds.data.question, function(itm, obj) {
+//					hm += '<li><a href=weihuifu.html?question_id=' + sds.data.question[itm].question_id + '><div class="expert mb10"><div class="ing fl">';
+//					if(sds.data.question[itm].user_thumb == '' || sds.data.question[itm].user_thumb == null) {
+//						hm += '<img src="img/user@2x.png">';
+//					} else {
+//						hm += '<img src=' + sds.data.question[itm].user_thumb + ' />';
+//					}
+//					hm += '</div><div class="fl dl"><p>' + sds.data.question[itm].user_name + '</p>';
+//					hm += ' <div class="time">' + sds.data.question[itm].question_addtime + '</div></div>';
+//					if(sds.data.question[itm].question_status == '未回复') {
+//						hm += '<img class="ism fr" src="img/q0.png"/>';
+//					} else if(sds.data.question[itm].question_status == '已解决') {
+//						hm += '<img class="ism fr" src="img/q2.png"/>';
+//					} else if(sds.data.question[itm].question_status == '进行中') {
+//						hm += '<img class="ism fr" src="img/q1.png"/>';
+//					}
+//					hm += '</div><div class="detail mb10 l-y"><p class="lypss">' + sds.data.question[itm].question_content + '</p>';
+//					$.each(sds.data.question[itm].question_thumb, function(it, obj) {
+//						if(sds.data.question[itm].question_thumb.length === 0) {
+//							hm += ' ';
+//						} else {
+//							hm +='<div class=dotai_'+sds.data.question[itm].question_thumb.length +' style= background-image:url('+sds.data.question[itm].question_thumb[it].thumb_url+')  />';
+//						}
+//					});
+//					hm += '</div></a></li>';
+//				});
+//				$('.zjtj').eq(0).html(hm);
+//				// 视频加载更多
+//				$(".linps").on('touchend', function(e) {
+//				e.preventDefault()
+//				sj++;
+//				ax1("http://jiayuan.meihaojy.com/rest.php?s=web/index",{'method':'fosung.app.v2.specialist.detail','specialist_id':sid,'page':sj});
+//				if(sds.data.question.length != 0) {
+//					$.each(sds.data.question, function(itm, obj) {
+//						hm += '<li><a href=weihuifu.html?question_id=' + sds.data.question[itm].question_id + '><div class="expert mb10"><div class="ing fl">';
+//						if(sds.data.question[itm].user_thumb == '' || sds.data.question[itm].user_thumb == null) {
+//							hm += '<img src="img/user@2x.png">';
+//						} else {
+//							hm += '<img src=' + sds.data.question[itm].user_thumb + ' />';
+//						}
+//
+//						hm += '</div><div class="fl dl"><p>' + sds.data.question[itm].user_name + '</p>';
+//						hm += ' <div class="time">' + sds.data.question[itm].question_addtime + '</div></div>';
+//						if(sds.data.question[itm].question_status == '未回复') {
+//							hm += '<img class="ism fr" src="img/q0.png"/>';
+//						} else if(sds.data.question[itm].question_status == '已解决') {
+//							hm += '<img class="ism fr" src="img/q2.png"/>';
+//						} else if(sds.data.question[itm].question_status == '进行中') {
+//							hm += '<img class="ism fr" src="img/q1.png"/>';
+//						}
+//						hm += '</div><div class="detail mb10 l-y"><p class="lypss">' + sds.data.question[itm].question_content + '</p>';
+//						$.each(sds.data.question[itm].question_thumb, function(it, obj) {
+//							
+//							if(sds.data.question[itm].question_thumb.length === 0) {
+//								hm += ' ';
+//							} else {
+//						        hm +='<div class=dotai_'  +sds.data.question[itm].question_thumb.length +' style= background-image:url('+sds.data.question[itm].question_thumb[it].thumb_url+')  />';
+//							}
+//						});
+//						hm += '</div></a></li>';
+//					});
+//				} else {
+//					sj--;
+//					$(this).html('已经全部加载完毕');
+//				}
+//				$('.zjtj').eq(0).html(hm);
+//			});
+//			var sd=0;
+//			var ctiv;
+//			sd=1;
+			$(".tabs a").on('touchstart',function(e){
+				e.preventDefault();
+				$(this).addClass("active").siblings().removeClass();
+				$('#news_fir_xs section').eq($(this).index()).addClass("news_fir_xsC").siblings().removeClass();
+//				tr=false;
+//				hm1='';
+//				sj=1;
+//				sj1=1;
+//				sj2=1;
+//				sj3=1;
+//				sd=$(this).index()+1;
+//				if(sd==2){
+//				ax1("http://jiayuan.meihaojy.com/rest.php?s=web/index",{'method':'fosung.app.v2.specialist.listfarmer','page':sj1,'lecturer_id':sid});
+//				console.log(sds);
+//					$.each(sds.data.lecture_info, function (its, obj) {
+//					hm1+='<li class="lis"><a  href=zhuanjiageren.html?lecturer_id='+sds.data.lecture_info[its].lecturer_id+'><div class="touxia">';
+//					hm1+='<img src='+sds.data.lecture_info[its].lecturer_head_img+' /></div><div class="jianjie">';
+//					hm1+='<h1 class="name">'+sds.data.lecture_info[its].lecturer_name+'</h1>';
+//					hm1+='<p class="zhiwu">'+sds.data.lecture_info[its].lecturer_job_title+'</p>';
+//					hm1+='<p class="shangchang">'+sds.data.lecture_info[its].lecturer_skill_area+'</p></div></a></li>';
+//				})
+//				$('.zjlst').get(0).innerHTML=hm1;
+//				}
+			})
+//			// 第一页加载更多
+//			
+//			//专家加载更多
+//			$('.linps3').eq(0).on('touchend',function(e){
+//				e.preventDefault();
+//				sj1++;
+//				ax1("http://jiayuan.meihaojy.com/rest.php?s=web/index",{'method':'fosung.app.v2.specialist.listfarmer','page':sj1,'lecturer_id':sid});
+//				console.log(sds);
+//				if(sds.data.lecture_info.length != 0) {
+//					$.each(sds.data.lecture_info, function (its, obj) {
+//						hm1+='<li class="lis"><a  href=zhuanjiageren.html?lecturer_id='+sds.data.lecture_info[its].lecturer_id+'><div class="touxia">';
+//						hm1+='<img src='+sds.data.lecture_info[its].lecturer_head_img+' /></div><div class="jianjie">';
+//						hm1+='<h1 class="name">'+sds.data.lecture_info[its].lecturer_name+'</h1>';
+//						hm1+='<p class="zhiwu">'+sds.data.lecture_info[its].lecturer_job_title+'</p>';
+//						hm1+='<p class="shangchang">'+sds.data.lecture_info[its].lecturer_skill_area+'</p></div></a></li>';
+//					})
+//				}else {
+//					sj--;
+//					$(this).html('已经全部加载完毕');
+//				}
+//				$('.zjlst').get(0).innerHTML=hm1;
+//			})
+//			$(".tabs a").click(function(e){
+//				e.preventDefault();
+//			});
+//			$(".ly-as").on('touchstart mousedown',function(e){
+//				$(".ly-as").attr("href","javascript:;"); 
+//				 location.href='http://jiayuan.meihaojy.com/app.php?s=index/down';
+//			});
+//			$('.cha').eq(0).on('touchstart mousedown',function(e){
+//				$(this).parent().hide();
+//			})
+	</script>

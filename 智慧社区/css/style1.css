@@ -1,0 +1,102 @@
+*{margin:0;padding:0;}
+html {width: 100%;-webkit-font-smoothing: antialiased;-webkit-overflow-scrolling: touch;-moz-overflow-scrolling: touch;-o-overflow-scrolling: touch;overflow-scrolling: touch}
+body {color: #535353;font-size: 14px;font-family: "arial", "微软雅黑";background:#E3E3E3;width:100%;position: relative}
+img {border: 0}
+ol, ul, li {list-style: none}
+dl, dt, dd, ul, li {margin: 0;padding: 0}
+a{ text-decoration:none;}
+.fl{ float:left;}
+.fr{ float:right;}
+.clear{ clear:both;}
+
+.banner { margin: 0 auto;/*height: 0px;*/padding-top:56.3%;overflow: hidden;}
+.banner img { width:100%;}
+
+.main_video,.main_news,.main_expert,.main_expert_list,.main_text{ background-color:#fff; margin-bottom:10px;}
+.main_video .title, .main_expert .title, .main_expert_list .title, .main_news .title {height: 40px; text-align:left; line-height:40px; font-weight:bold;color: #00aff0; font-size:14px; padding-left:10px; padding-right:10px;}
+.main_video .title .more, .main_news .title .more, .main_expert .title .more, .main_expert_list .title .more{height: 16px; float:right;}
+.main_video .title .more a, .main_news .title .more a, .main_expert .title .more a, .main_expert_list .title .more a {color: #363636; font-size:12px; font-weight:normal;}
+
+.main_video .content li{ margin-bottom:10px; padding:10px; border-bottom:#F1F1F1 solid 1px;}
+.main_video .content li .img{ width: 140px;height: 90px;overflow: hidden; position:relative; background-size:100% 100%; background-repeat:no-repeat;}
+.main_video .content li .img img{ width: 50px;height:50px; bottom:0px; position:absolute;}
+
+.main_video .content .description{ height:90px;margin-left:150px; overflow:hidden; position:relative;}
+.main_video .content .description h4{ font-size: 16px;font-weight: normal;max-height:54px;line-height:27px;margin-bottom: 2px; color: #646464;display: block;overflow: hidden;}
+.main_video .content .description p {height: 20px;width: 100%; line-height: 20px;font-weight: 500;font-size: 12px;color: #606060; position:absolute; bottom:0px;}
+.main_video .content .description .type {height: 20px; padding-left:20px; padding-right:5px; float:right; color:#FFFFFF; background-size:100% 100%; background-repeat:no-repeat;}
+.main_video .content .description .yugao { background-image:url(../img/yugao.png);}
+.main_video .content .description .huigu { background-image:url(../img/huigu.png);}
+.main_video .content .description .zhibo { background-image:url(../img/zhibo.png);}
+.main_video .content .description .dianbo { background-image:url(../img/dianbo.png);}
+
+.main_news .content li{ border-bottom:#F1F1F1 solid 1px; margin-bottom:10px; padding:10px;}
+.main_news .content li .img{ width: 140px;height: 90px;overflow: hidden;}
+.main_news .content li .img img{ width: 140px;height: 90px;}
+.main_news .content .description{ height:90px;margin-left:150px; overflow:hidden;}
+.main_news .content .description h4{ font-size: 16px;font-weight: 500;max-height:50px;line-height:25px;margin-bottom: 2px; color: #646464;display: block;overflow: hidden;}
+.main_news .content .description p {height: 20px; line-height: 20px;font-weight: 500;font-size: 12px;color: #606060;}
+
+.main_text .content{ padding:10px;}
+.main_text .content img{ max-width:100%;}
+
+.main_video .content .more, .main_news .content .more, .main_expert_list .content .more{height: 16px; font-size:12px;color: #363636;text-align:center;font-weight: normal;padding:0 0 12px;}
+.main_video .content .more a, .main_news .content .more a, .main_expert_list .content .more a {color: #363636; font-size:12px; font-weight:normal;}
+
+.main_expert .content li{ width:33.33%; border-bottom:#F1F1F1 solid 1px; margin-bottom:10px; text-align: center;}
+/*.main_expert .content li .img{height: 90px;}*/
+.main_expert .content li .img img{ width:100%;height: 90px;}
+.main_expert .content .name{ padding:5px 0; }
+
+.main_expert_list .content li{ border-bottom:#F1F1F1 solid 1px; margin-bottom:10px; height:70px; }
+.main_expert_list .content li .img{ width:50px;height: 50px; border-radius:25px; background-position:center center; background-size:100% 100%;margin: 10px 0 0 20px;}
+.main_expert_list .content .name{ padding:5px 0 5px 80px; line-height:20px; }
+/*************************************后期修改的CSS样式**************,*/
+ .swiper-container {
+        width: 100%;
+        /*height: 300px;*/
+        /*margin: 20px auto;*/
+    }
+    .swiper-slide {
+        text-align: center;
+        /*font-size: 18px;*/
+        background: #fff;
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .lyps{
+    	position: relative;
+    }
+    #Lzb{
+		width: 140px;
+		height:25px;
+		position: absolute;
+		bottom: 0rem;
+		background: rgba(0,0,0,0.6); 
+		line-height:26px;
+	}
+	#Lzb img{
+		width: 14px;
+		height: 14px;
+		margin-left:5px;
+		bottom: 5px;
+		/*position: static;
+		vertical-align: middle;*/
+	}
+	#Lzb span{
+		color: #fff;
+		margin-left: 22px;
+		
+	}

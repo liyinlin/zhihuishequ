@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html style="font-size: 100px;">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>美好家园</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/ss1.css" />
+	<link rel="stylesheet" type="text/css" href="css/zh_style.css" />
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="zh-bg">
+	<div class="education_fir">
+		<a href="javascript:window.history.go(-1)" class="fan">
+			<img class="lms" src="img/datou.png" />
+		</a>
+		快速问答
+	</div>
+	<div class="zh-con">
+		<div class="zh-fenlei">
+			<select>
+				<option value="" disabled selected>请选择分类</option>
+				<option value="">分类1</option>
+				<option value="">分类2</option>
+			</select>			
+		</div>
+		<div class="zh-wenda">
+			<textarea placeholder="请输入咨询内容，不超过50字" rows="5"></textarea>
+		</div>
+		<div class="zh-pic">
+			<div class="zh-upload_area">
+                <div class="zh-upload_add">
+                    <input class="zh-upload_file" type="file" accept="image/*" onchange="handleFiles(this)">
+                </div>
+            </div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var html = document.getElementsByTagName("html")[0];
+    var width = document.documentElement.clientWidth || document.body.clientWidth;
+    var f = (100/640) * width; //先有个比例这里用的20/520，的比例
+    html.style.fontSize = f + 'px';
+    document.body.style.display='block';
+</script>
+<script>
+	/*==图片上传本地预览---删除==*/
+	function delPic(obj){
+		$(obj).parents(".zh-upload_pic").remove();
+	}
+    /*==图片上传本地预览==*/
+    window.URL = window.URL || window.webkitURL;
+    function handleFiles(obj) {
+        var files = obj.files,
+              img = new Image();
+        if (window.URL) {
+            //File API
+            //alert(files[0].name + "," + files[0].size + " bytes");
+            img.src = window.URL.createObjectURL(files[0]); //创建一个object URL，并不是你的本地路径
+            img.onload = function (e) {
+                window.URL.revokeObjectURL(this.src); //图片加载后，释放object URL
+            }
+            var htm = '<div class="zh-upload_pic">' +
+                        '<img class="zh-upload_pic_img" src="' + img.src + '" />' +
+                        '<span class="zh-upload_pic_del" onclick="delPic(this)"></span>' +
+                    '</div>';
+            $(obj).parent().before(htm);
+        } else if (window.FileReader) {
+            //opera不支持createObjectURL/revokeObjectURL方法。我们用FileReader对象来处理
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onload = function (e) {
+                //alert(files[0].name + "," + e.total + " bytes");
+                img.src = this.result;
+                var htm = '<div class="zh-upload_pic">' +
+                        '<img class="zh-upload_pic_img" src="' + img.src + '" />' +
+                        '<span class="zh-upload_pic_del" onclick="delPic(this)"></span>' +
+                    '</div>';
+                $(obj).parent().before(htm);
+            }
+        }
+    }
+</script>
+</html>
